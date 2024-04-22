@@ -1,0 +1,47 @@
+{
+	"name": "css-follow-cursor",
+	"description": "Adds CSS variables which follow the cursor position",
+	"keywords": [
+		"simple",
+		"follow",
+		"cursor",
+		"mouse",
+		"pointer",
+		"css"
+	],
+	"version": "1.0.0",
+	"license": "GPL-3.0-or-later",
+	"author": {
+		"name": "Aritz Beobide-Cardinal",
+		"email": "aritz@aritzcracker.ca"
+	},
+	"bugs": {
+		"url": "https://github.com/ARitz-Cracker/css-follow-cursor/issues"
+	},
+	"homepage": "https://github.com/ARitz-Cracker/css-follow-cursor",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/ARitz-Cracker/css-follow-cursor.git"
+	},
+	"main": "dist/index.js",
+	"type": "module",
+	"scripts": {
+		"build": "rm -rf dist/* && mkdir -p dist && tsc",
+		"build-standalone": "webpack --mode=development && webpack --mode=production",
+		"docs": "typedoc src/index.ts"
+	},
+	"dependencies": {
+		"@aritz-cracker/browser-utils": "^1.2.1"
+	},
+	"devDependencies": {
+		"ts-loader": "^9.5.1",
+		"typedoc": "^0.25.13",
+		"typescript": "^5.4.5",
+		"webpack": "^5.91.0",
+		"webpack-cli": "^5.1.4"
+	},
+	"files": [
+		"dist/index.js",
+		"dist/index.d.ts"
+	]
+}

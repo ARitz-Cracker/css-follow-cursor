@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html class="follow-cursor-vars">
+	<head>
+		<script src="../dist/css-follow-cursor.dist.js"></script>
+		<style>
+			:root {
+				--cursor-fade-in-time: 0.5s;
+				--cursor-fade-out-time: 2s;
+				--cursor-fade-function: cubic-bezier(1, -0.24, 0, 1.3);
+			}
+			body {
+				
+				margin: 32px;
+				background:
+					no-repeat
+					fixed
+					/* url */
+					url("wojak-pointing.gif")
+					/* pos-x */
+					calc(
+						calc(var(--cursor-window-pos-x-px) - 25px) * var(--cursor-window-pos-fade-fraction) +
+						calc(100% * calc(1 - var(--cursor-window-pos-fade-fraction)))
+					)
+					/* pos-y */
+					calc(
+						calc(var(--cursor-window-pos-y-px) - 80px) * var(--cursor-window-pos-fade-fraction) +
+						calc(50% * calc(1 - var(--cursor-window-pos-fade-fraction)))
+					) /
+					/* size */
+					calc(
+						calc(100% * calc(1 - var(--cursor-window-pos-fade-fraction))) +
+						calc(200px * var(--cursor-window-pos-fade-fraction))
+					),
+					no-repeat
+					fixed
+					/* url */
+					url("giphy-3900379506.gif")
+					/* pos-x */
+					calc(
+						var(--cursor-window-pos-x-percentage) * var(--cursor-window-pos-fade-fraction) +
+						calc(50% * calc(1 - var(--cursor-window-pos-fade-fraction)))
+					)
+					/* pos-y */
+					calc(
+						var(--cursor-window-pos-y-percentage) * var(--cursor-window-pos-fade-fraction) +
+						calc(50% * calc(1 - var(--cursor-window-pos-fade-fraction)))
+					) /
+					/* size */
+					calc(
+						calc(10% * calc(1 - var(--cursor-window-pos-fade-fraction))) +
+						calc(500px * var(--cursor-window-pos-fade-fraction))
+					);
+			}
+			.test-area {
+				display: inline-block;
+				background-color: #00f;
+				color: white;
+				width: 350px;
+				height: 350px;
+				margin: 10px;
+
+				--cursor-fade-in-time: 1s;
+				--cursor-fade-out-time: 3s;
+				--cursor-fade-function: ease-in-out;
+				background: radial-gradient(farthest-corner at var(--cursor-pos-x-percentage) var(--cursor-pos-y-percentage), #0ff, #00f var(--cursor-pos-fade-percentage));
+			}
+			.test-area:not(.follow-cursor-vars) {
+				background: radial-gradient(farthest-corner at var(--cursor-pos-x-percentage) var(--cursor-pos-y-percentage), #fff, #000 var(--cursor-pos-fade-percentage));
+			}
+		</style>
+	</head>
+	<body oncontextmenu="document.documentElement.classList.toggle('follow-cursor-vars')">
+		<h1>hovrrtesttt</h1>
+
+		<div id="testElem1" class="test-area follow-cursor-vars" onclick="window.testElem1.classList.toggle('follow-cursor-vars')">
+			omg the gradient fades in follows the curusr also you can click to toggle the mouse following the pos will not be updated but the fadeout will still play
+		</div>
+		<div id="testElem2" class="test-area follow-cursor-vars" onclick="window.testElem2.classList.toggle('follow-cursor-vars')">
+			omg the gradient fades in follows the curusr also you can click to toggle the mouse following the pos will not be updated but the fadeout will still play
+		</div>
+
+		<p>gotta</p>
+		<p>make</p>
+		<p>this</p>
+		<p>super</p>
+		<p>long</p>
+		<p>so</p>
+		<p>it</p>
+		<p>shows</p>
+		<p>that</p>
+		<p>this</p>
+		<p>works</p>
+		<p>with</p>
+		<p>backgrounds</p>
+		<p>that</p>
+		<p>are</p>
+		<p>defined</p>
+		<p>to</p>
+		<p>be</p>
+		<p>fixed</p>
+		<p>to</p>
+		<p>the</p>
+		<p>viewport</p>
+		<p>wooooaahhh</p>
+		<p>gee</p>
+		<p>bill</p>
+		<p>how</p>
+		<p>come</p>
+		<p>your</p>
+		<p>mom</p>
+		<p>lets</p>
+		<p>you</p>
+		<p>have</p>
+		<p>2</p>
+		<p>css</p>
+		<p>variables?</p>
+	</body>	
+</html>
