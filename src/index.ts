@@ -135,7 +135,7 @@ requestAnimationFrame(fadeFrame);
 function listenToAllElements() {
 	hoverClasses.forEach(className => {
 		for (const elem of document.getElementsByClassName(className)) {
-			if (!hoverDataMap.has(elem as HTMLElement | SVGElement)) {
+			if (!listenedElements.has(elem as HTMLElement | SVGElement)) {
 				startListeningToElement(elem as HTMLElement | SVGElement);
 			}
 		}
