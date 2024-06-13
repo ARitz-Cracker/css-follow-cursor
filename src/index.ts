@@ -141,6 +141,11 @@ function listenToAllElements() {
 		}
 	});
 }
+/**
+ * Adds one or more element classes to update the `--cursor-pos-*` CSS variables on
+ * 
+ * @param classes 
+ */
 export function addFollowCursorClass(...classes: string[]) {
 	classes.forEach(className => hoverClasses.add(className));
 	listenToAllElements();

@@ -66,9 +66,11 @@ on the root `<html>` element, (or the root `<svg>` element) then these CSS varia
 
 ## Installation
 
-You can add the `css-follow-cursor` package as a dependency of your npm project. Just be sure to import it 
-somewhere so that the appropriate events are listened to.
+You can add the `css-follow-cursor` package as a dependency of your npm project and simply:
+```js
+import "css-follow-cursor"; // Automatically sets all the needed event handlers
+```
 
 If you run `npm install && npm run build-standalone` after cloning this repository, you will have a self-contained
-version of this library bundled with the external functions depended upon that you can use in a normal `<script>` tag.
+version of this library bundled with the external dependencies which you can use in a normal `<script>` tag.
 (Woah, old school!)
