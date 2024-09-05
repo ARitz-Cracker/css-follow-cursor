@@ -27,9 +27,10 @@ following CSS variables:
 * `--cursor-pos-fade-fraction`: A value between `0` and `1`, with the value approaching `1` while the cursor hovers
   over the element, and `0` while the cursor is not hovering over the element. Useful with CSS's `calc()`.
 
-This library also exports the following function:
+This library also exports the following functions:
 * `addFollowCursorClass(...classes: string[])`: Allows you to add your own class so you're not forced to use
   `follow-cursor-vars`.
+* `removeFollowCursorClass(...classes: string[])`: Does what it sounds like. Use with care!
 
 The values of the `--cursor-pos-fade-percentage` and `--cursor-pos-fade-fraction` variables can be influenced using the
 variables listed below:

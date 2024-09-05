@@ -151,6 +151,29 @@ export function addFollowCursorClass(...classes: string[]) {
 	listenToAllElements();
 }
 
+/**
+ * Removes one or more element classes to update the `--cursor-pos-*` CSS variables on
+ * 
+ * @param classes 
+ */
+export function removeFollowCursorClass(...classes: string[]) {
+	const elemsToCheck: Set<HTMLElement | SVGElement> = new Set();
+	for (const className of classes) {
+		hoverClasses.delete(className);
+		for (const elem of document.getElementsByClassName(className)) {
+			elemsToCheck.add(elem as HTMLElement | SVGElement);
+		}
+	}
+	for (const elem of elemsToCheck) {
+		if (
+			listenedElements.has(elem) &&
+			[...hoverClasses].every(className => !elem.classList.contains(className))
+		) {
+			stopListeningToElement(elem);
+		}
+	}
+}
+
 function upateMousePosVars(elem: HTMLElement | SVGElement) {
 	if (elem == document.documentElement) {
 		const fractionX = mouseX / window.innerWidth;
